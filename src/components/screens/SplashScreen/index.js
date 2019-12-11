@@ -1,7 +1,11 @@
 import React from 'react';
-
+import {View, Text} from 'native-base';
 const index = () => {
-  return <div>Welcome Screen</div>;
+  return (
+    <View>
+      <Text>Welcome Screen</Text>
+    </View>
+  );
 };
 
 export default index;
