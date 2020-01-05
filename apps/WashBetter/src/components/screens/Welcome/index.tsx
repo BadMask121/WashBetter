@@ -40,6 +40,7 @@ export default props => {
               alignItems: 'center',
               textAlign: 'center',
               fontFamily: 'Gilroy-Regular',
+              lineHeight: 25,
             }}>
             Connecting you to the best car wash vendors near you, giving you the
             best services
@@ -56,6 +57,7 @@ export default props => {
               icon="location-arrow"
               iconColor="#fff"
               iconSize={20}
+              onPress={() => props.navigation.navigate('FindWashers')}
             />
           </View>
           <View>
@@ -67,7 +69,7 @@ export default props => {
                 color: '#000',
               }}
               text="Login Account"
-              onPress={() => props.navigation.push('Login', {id: '1'})}
+              onPress={() => props.navigation.push('Login')}
             />
           </View>
         </View>

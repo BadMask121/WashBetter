@@ -1,4 +1,5 @@
 import Login from './Login';
 import Signup from './Signup';
+import FindWashers from './FindWashers';
 
-export {Login, Signup};
+export {FindWashers, Login, Signup};

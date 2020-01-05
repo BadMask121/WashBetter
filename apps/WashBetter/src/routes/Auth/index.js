@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
-import {Login, Signup} from '../../containers';
+import {Login, Signup, FindWashers} from '../../containers';
 import Welcome from '../../components/screens/Welcome';
 import {createAppContainer} from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -19,6 +19,9 @@ const index = values =>
       },
       Signup: {
         screen: props => <Signup {...props} {...values} />,
+      },
+      FindWashers: {
+        screen: props => <FindWashers {...props} {...values} />,
       },
     },
     {
