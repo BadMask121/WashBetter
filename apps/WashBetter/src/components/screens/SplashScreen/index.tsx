@@ -4,7 +4,7 @@ import {View, Text} from 'native-base';
 import {Component} from 'react';
 import {Transition} from 'react-navigation-fluid-transitions';
 import * as Animatable from 'react-native-animatable';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import style from './style';
 
 export default props => {
@@ -18,8 +18,8 @@ export default props => {
       <Animatable.View
         useNativeDriver
         animation="fadeInDown"
-        delay={500}
-        duration={900}
+        delay={400}
+        duration={600}
         style={{
           ...style.logoContainer,
         }}>
@@ -40,8 +40,9 @@ export default props => {
         style={style.arrowContainer}>
         <Icon
           name="arrow-right"
-          size={50}
+          size={40}
           color="#1565c0"
+          light
           onPress={getStarted}></Icon>
       </Animatable.View>
     </View>
