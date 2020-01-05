@@ -3,9 +3,10 @@ const style = {
     flex: 1,
     backgroundColor: '#fff',
   },
-  loginOptions: {
-    flex: 1,
+  topTitle: {
+    flex: 0.3,
   },
+  inputForm: {},
 };
 
 export default style;

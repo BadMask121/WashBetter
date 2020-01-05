@@ -3,6 +3,7 @@ import {View, Text} from 'native-base';
 import {KeyboardAvoidingView, TouchableOpacity} from 'react-native';
 import {Formik} from 'formik';
 import Button from '@custom/Button';
+import TopTitle from '@custom/TopTitle';
 import FormInput from '@custom/Form/Input';
 import {app} from '@src/helpers/constants';
 import style from './style';
@@ -10,9 +11,7 @@ export default () => {
   return (
     <KeyboardAvoidingView style={style.container}>
       <View style={style.loginOptions}>
-        <View style={style.titleContainer}>
-          <Text style={style.title}>Log in</Text>
-        </View>
+        <TopTitle title="Log in" />
         <Button
           icon="facebook"
           iconSize={20}
@@ -60,12 +59,22 @@ export default () => {
                 }
               }>
               <FormInput
+                inputViewStyle={{
+                  borderRadius: 5,
+                  borderColor: 'lightblue',
+                }}
+                regular
                 handleChange={handleChange}
                 name="email"
                 placeholder="Email Address"
                 submitting={false}
               />
               <FormInput
+                inputViewStyle={{
+                  borderRadius: 5,
+                  borderColor: 'lightblue',
+                }}
+                regular
                 handleChange={handleChange}
                 name="password"
                 placeholder="Password"

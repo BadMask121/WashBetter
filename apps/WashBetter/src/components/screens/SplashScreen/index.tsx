@@ -11,6 +11,11 @@ export default props => {
   const height: number = Dimensions.get('screen').height;
   const width: number = Dimensions.get('screen').width;
 
+  useEffect(() => {
+    setTimeout(() => {
+      getStarted();
+    }, 1000);
+  }, []);
   const getStarted = () => props.navigation.navigate('Auth');
 
   return (
@@ -18,8 +23,8 @@ export default props => {
       <Animatable.View
         useNativeDriver
         animation="fadeInDown"
-        delay={400}
-        duration={600}
+        delay={300}
+        duration={400}
         style={{
           ...style.logoContainer,
         }}>
@@ -32,7 +37,7 @@ export default props => {
           }}
         />
       </Animatable.View>
-      <Animatable.View
+      {/* <Animatable.View
         useNativeDriver
         animation="fadeInUp"
         delay={500}
@@ -44,7 +49,7 @@ export default props => {
           color="#1565c0"
           light
           onPress={getStarted}></Icon>
-      </Animatable.View>
+      </Animatable.View> */}
     </View>
   );
 };

@@ -3,9 +3,12 @@ const style = {
     flex: 1,
     backgroundColor: '#fff',
   },
-  loginOptions: {
+  imageContainer: {
     flex: 1,
+    borderColor: '#ddd',
+    borderBottomWidth: 1,
   },
+  salesContainer: {flex: 1},
 };
 
 export default style;

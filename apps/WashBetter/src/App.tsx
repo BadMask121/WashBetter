@@ -33,7 +33,7 @@ interface Props {
 const App = (props: Props) => {
   return (
     <Fragment>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="light-content" />
       <SafeAreaView style={{flex: 1}}>
         <Route />
       </SafeAreaView>

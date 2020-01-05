@@ -4,14 +4,18 @@ import {createSwitchNavigator, createAppContainer} from 'react-navigation';
 import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
 import AppNavigation from './App';
 import AuthNavigation from './Auth';
+import {SplashScreen} from '../components/screens';
 const Navigation = createSharedElementStackNavigator(
   createSwitchNavigator,
   {
+    SplashScreen: {
+      screen: props => <SplashScreen {...props} />,
+    },
     App: AppNavigation,
     Auth: AuthNavigation(),
   },
   {
-    initialRouteName: 'App',
+    initialRouteName: 'SplashScreen',
   },
 );
 

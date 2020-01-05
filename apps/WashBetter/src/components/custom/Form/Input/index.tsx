@@ -1,18 +1,24 @@
 import React from 'react';
 import {Item, Label, Input} from 'native-base';
 import {Dimensions} from 'react-native';
-function FormInput({handleChange, name, placeholder, submitting, ...props}) {
+function FormInput({
+  handleChange,
+  name,
+  placeholder,
+  submitting,
+  inputViewStyle,
+  ...props
+}) {
   return (
     <Item
-      regular
       style={{
-        borderRadius: 5,
-        borderColor: 'lightblue',
+        ...inputViewStyle,
         height: 50,
         marginBottom: 15,
         marginLeft: 10,
         marginRight: 10,
       }}
+      {...props}
       floatingLabel>
       <Input
         onChangeText={handleChange(name)}
