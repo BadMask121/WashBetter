@@ -2,6 +2,8 @@ import React from 'react';
 import {View, Text} from 'native-base';
 import {Image, Dimensions, TouchableHighlight} from 'react-native';
 import Button from 'components/custom/Button';
+import StarRating from '@lib/react-native-star-rating';
+import {app} from '@src/helpers/constants';
 import style from './style';
 interface Props {
   id: number;
@@ -31,7 +33,7 @@ export default (props: Props) => {
               borderTopLeftRadius: 10,
               borderBottomLeftRadius: 10,
               width: (Dimensions.get('screen').width / 2) * 0.5,
-              height: 150,
+              height: app.findWashHeight,
               resizeMode: 'cover',
             }}
           />
@@ -43,7 +45,7 @@ export default (props: Props) => {
                 width: 150,
                 fontSize: 20,
                 fontFamily: 'Gilroy-Bold',
-                color: '#1C4641',
+                color: '#4E4D50',
               }}>
               {props.name}
             </Text>
@@ -57,7 +59,13 @@ export default (props: Props) => {
             </Text>
           </View>
           <View>
-            <Text>Add star Here</Text>
+            <StarRating
+              disabled={false}
+              maxStars={5}
+              rating={props.rating}
+              fullStarColor="#67CDBF"
+              starSize={25}
+            />
           </View>
         </View>
         <View style={style.cardBookContainer}>

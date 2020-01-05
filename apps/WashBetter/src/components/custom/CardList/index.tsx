@@ -1,12 +1,22 @@
-import React, {lazy, Suspense} from 'react';
+import React, {lazy, Suspense, useState, useEffect} from 'react';
 import {View, Text} from 'native-base';
-import {Image, Dimensions, FlatList, TouchableHighlight} from 'react-native';
-import {data} from '../../../helpers/dummydata';
-// import FindCardWashCard from '../Card/FindCarWashCard';
+import {
+  Image,
+  Dimensions,
+  FlatList,
+  TouchableHighlight,
+  Animated,
+} from 'react-native';
 import {ActivityIndicator} from 'react-native';
+import {data} from '../../../helpers/dummydata';
+import {app} from '@src/helpers/constants';
 const FindCardWashCard = lazy(() => import('../Card/FindCarWashCard'));
 
-export default ({loading, ...props}) => {
+export default ({loading, handlePageScroll, ...props}) => {
+  const [state, setstate] = useState({
+    scrollY: new Animated.Value(0),
+  });
+
   const renderFooter = () =>
     loading ? (
       <View>
@@ -14,16 +24,37 @@ export default ({loading, ...props}) => {
       </View>
     ) : null;
 
+  const labelSize = state.scrollY.interpolate({
+    inputRange: [0, 200],
+    outputRange: [40, 30],
+    extrapolate: 'clamp',
+  });
+  const flex = state.scrollY.interpolate({
+    inputRange: [0, 200],
+    outputRange: [0.3, 0.25],
+    extrapolate: 'clamp',
+  });
+
+  useEffect(() => {
+    handlePageScroll(flex, labelSize);
+  }, []);
+
+  const onScroll = Animated.event([
+    {nativeEvent: {contentOffset: {y: state.scrollY}}},
+  ]);
+
   return (
     <Suspense fallback={renderFooter()}>
       <View style={{flex: 1, padding: 5}}>
-        <FlatList
+        <Animated.FlatList
           data={data}
           renderItem={({item, index, separators}) => (
             <FindCardWashCard key={item.id} {...item} {...props} />
           )}
-          keyExtractor={(item, i) => item.id}
+          keyExtractor={item => item.id.toString()}
           ListFooterComponent={renderFooter}
+          scrollEventThrottle={1}
+          {...{onScroll}}
         />
         <Text>sdds</Text>
       </View>

@@ -4,14 +4,14 @@ export const data = [
     image: require('@assets/images/splashScreen/better1632x2449.jpg'),
     name: 'Venter Car washwashwashwashwashwash',
     location: 'Lagos, Nigeria',
-    rating: 3.5,
+    rating: 3,
   },
   {
     id: 2,
     image: require('@assets/images/logo.png'),
     name: 'Ace Car ',
     location: 'Lagos, Nigeria',
-    rating: 3.5,
+    rating: 3,
   },
   {
     id: 3,

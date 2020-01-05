@@ -1,10 +1,13 @@
 import React from 'react';
 import {View, Text} from 'native-base';
+import {Animated} from 'react-native';
 import style from './style';
-export default ({title}) => {
+export default ({title, labelSize}) => {
   return (
-    <View style={style.titleContainer}>
-      <Text style={style.title}>{title}</Text>
-    </View>
+    <Animated.View style={style.titleContainer}>
+      <Animated.Text style={[style.title, {fontSize: labelSize || 40}]}>
+        {title}
+      </Animated.Text>
+    </Animated.View>
   );
 };

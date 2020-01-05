@@ -11,6 +11,6 @@ declare module 'react-native-paper' {
   declare module.exports: any
 }
 
-declare module "react" {
- declare module.exports: any
-}
+// declare module "react" {
+//  declare module.exports: any
+// }
