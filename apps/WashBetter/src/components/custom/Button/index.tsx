@@ -3,7 +3,7 @@ import {Dimensions} from 'react-native';
 import {Button, Text} from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import style from './style.js';
-
+import {app} from '@src/helpers/constants';
 interface Props {
   props?: Object;
   fontWeight?: string;
@@ -23,6 +23,7 @@ export default (props: Props) => {
     <Button
       disabled={props.disable}
       style={{
+        backgroundColor: app.primaryColorLight,
         ...style.buttonContainer,
         ...props.buttonStyle,
       }}

@@ -1,6 +1,6 @@
 import Login from './Login';
 import Signup from './Signup';
 import FindWashers from './FindWashers';
-import PreviewWasher from './PreviewWasher';
+import BookWasher from './BookWasher';
 
-export {FindWashers, PreviewWasher, Login, Signup};
+export {FindWashers, BookWasher, Login, Signup};

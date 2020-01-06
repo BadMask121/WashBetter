@@ -5,6 +5,7 @@ import Button from 'components/custom/Button';
 import StarRating from '@lib/react-native-star-rating';
 import {app} from '@src/helpers/constants';
 import style from './style';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 interface Props {
   id: number;
   image: string;
@@ -14,7 +15,7 @@ interface Props {
 }
 export default (props: Props) => {
   const bookWash = () => {
-    props.navigation.navigate('PreviewWasher', {
+    props.navigation.navigate('BookWasher', {
       id: props.id,
       image: props.image,
       name: props.name,
@@ -33,7 +34,7 @@ export default (props: Props) => {
               borderTopLeftRadius: 10,
               borderBottomLeftRadius: 10,
               width: (Dimensions.get('screen').width / 2) * 0.5,
-              height: app.findWashHeight,
+              flex: 1,
               resizeMode: 'cover',
             }}
           />
@@ -51,20 +52,48 @@ export default (props: Props) => {
             </Text>
             <Text
               style={{
-                marginTop: 10,
+                marginTop: 1,
                 fontFamily: 'Gilroy-Medium',
                 color: '#55D2C4',
               }}>
               {props.location}
             </Text>
           </View>
-          <View>
+          <View
+            style={{
+              marginTop: 10,
+            }}>
+            <View
+              style={{
+                alignSelf: 'flex-start',
+                flexDirection: 'row',
+                marginBottom: 10,
+              }}>
+              <Icon
+                name="location-on"
+                size={15}
+                color="#55D2C4"
+                style={{
+                  marginLeft: -4,
+                }}
+              />
+              <Text
+                style={{
+                  fontFamily: 'Gilroy-Light',
+                  color: '#55D2C4',
+                  fontSize: 14,
+                  alignItems: 'flex-end',
+                  alignSelf: 'flex-end',
+                }}>
+                1 km away
+              </Text>
+            </View>
             <StarRating
               disabled={false}
               maxStars={5}
               rating={props.rating}
               fullStarColor="#67CDBF"
-              starSize={25}
+              starSize={22}
             />
           </View>
         </View>

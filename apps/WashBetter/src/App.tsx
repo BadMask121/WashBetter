@@ -16,6 +16,7 @@ import {
   View,
   Text,
   StatusBar,
+  Platform,
 } from 'react-native';
 
 import {
@@ -26,14 +27,23 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Route from './routes/App.routes';
+import {app} from 'helpers/constants';
 
 interface Props {
   user?: string;
 }
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBar.currentHeight;
+const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56;
+
+const MyStatusBar = ({backgroundColor, ...props}) => (
+  <View style={[{height: STATUSBAR_HEIGHT}, {backgroundColor}]}>
+    <StatusBar translucent backgroundColor={backgroundColor} {...props} />
+  </View>
+);
 const App = (props: Props) => {
   return (
     <Fragment>
-      <StatusBar barStyle="light-content" />
+      <StatusBar translucent backgroundColor="#fff" barStyle="dark-content" />
       <SafeAreaView style={{flex: 1}}>
         <Route />
       </SafeAreaView>

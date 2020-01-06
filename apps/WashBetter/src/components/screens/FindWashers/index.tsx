@@ -40,7 +40,7 @@ export default props => {
         <TopTitle labelSize={state.labelSize} title="Find Car Wash" />
         <View style={style.inputForm}>
           <Formik
-            initialValues={{email: ''}}
+            initialValues={{search: ''}}
             onSubmit={values => console.log(values)}>
             {({handleChange, handleBlur, handleSubmit, values}) => (
               <View>

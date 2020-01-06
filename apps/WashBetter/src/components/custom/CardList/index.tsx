@@ -56,7 +56,6 @@ export default ({loading, handlePageScroll, ...props}) => {
           scrollEventThrottle={1}
           {...{onScroll}}
         />
-        <Text>sdds</Text>
       </View>
     </Suspense>
   );

@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
-import {Image, Dimensions} from 'react-native';
+import {Image, Dimensions, StatusBar} from 'react-native';
 import {View, Text} from 'native-base';
-import {Component} from 'react';
 import {Transition} from 'react-navigation-fluid-transitions';
 import * as Animatable from 'react-native-animatable';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -20,6 +19,7 @@ export default props => {
 
   return (
     <View style={style.container}>
+      <StatusBar hidden />
       <Animatable.View
         useNativeDriver
         animation="fadeInDown"

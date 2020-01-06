@@ -1,6 +1,8 @@
+import {app} from '@src/helpers/constants';
 const style = {
   container: {
     flex: 1,
+    maxHeight: 200,
     backgroundColor: '#fff',
     shadowColor: '#000',
     shadowOffset: {
@@ -9,8 +11,8 @@ const style = {
     },
     borderRadius: 10,
     shadowOpacity: 0.29,
-    shadowRadius: 4.65,
-    elevation: 4,
+    shadowRadius: 2.05,
+    elevation: 2,
     flexDirection: 'row',
     margin: 10,
   },
@@ -24,14 +26,16 @@ const style = {
     justifyContent: 'space-between',
   },
   cardBookContainer: {
-    flexDirection: 'row',
-    width: 100,
-    height: 150,
-    marginRight: 10,
+    flex: 0.7,
+    flexDirection: 'column',
   },
   cardBook: {
-    height: 150,
-    width: 100,
+    flex: 1,
+    backgroundColor: app.primaryColorLight,
+    flexDirection: 'row',
+    marginLeft: 0,
+    marginRight: 0,
+    marginBottom: 0,
     borderTopRightRadius: 10,
     borderBottomRightRadius: 10,
     borderTopLeftRadius: 0,

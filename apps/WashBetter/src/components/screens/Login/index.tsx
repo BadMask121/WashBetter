@@ -86,7 +86,6 @@ export default () => {
                 buttonStyle={{
                   marginTop: 20,
                   marginBottom: 30,
-                  backgroundColor: app.primaryColor,
                 }}
                 textStyle={{fontFamily: 'Gilroy-Bold'}}
                 onPress={handleSubmit}

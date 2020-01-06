@@ -3,7 +3,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
 
 import Welcome from '../../components/screens/Welcome';
-import {Login, Signup, FindWashers, PreviewWasher} from '../../containers';
+import {Login, Signup, FindWashers, BookWasher} from '../../containers';
 const index = values =>
   createStackNavigator(
     {
@@ -22,8 +22,11 @@ const index = values =>
       FindWashers: {
         screen: props => <FindWashers {...props} {...values} />,
       },
-      PreviewWasher: {
-        screen: props => <PreviewWasher {...props} {...values} />,
+      BookWasher: {
+        screen: props => <BookWasher {...props} {...values} />,
+        navigationOptions: ({navigation}) => ({
+          headerShown: true,
+        }),
       },
     },
     {
