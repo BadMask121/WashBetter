@@ -7,21 +7,27 @@ import TopTitle from '@custom/TopTitle';
 
 export default props => {
   const payload = props.navigation.state.params;
+  const {width} = Dimensions.get('screen');
+  const {height} = Dimensions.get('screen');
+
   return (
     <View style={style.container}>
       <StatusBar
         translucent
         backgroundColor="transparent"
-        barStyle="dark-content"
+        barStyle="light-content"
       />
       <Animated.View style={style.headerContainer}>
-        <TopTitle style={style.headerTitle}>Booking</TopTitle>
+        {/* <TopTitle style={style.headerTitle}>Booking</TopTitle> */}
         <View style={style.imageContainer}>
+          <View style={{...style.imageOverlay, width, height}}>
+            <Text></Text>
+          </View>
           <Image
             source={payload.image}
             style={{
               ...style.image,
-              width: Dimensions.get('screen').width,
+              width,
               resizeMode: 'cover',
             }}
           />
@@ -30,8 +36,8 @@ export default props => {
       <View
         style={{
           ...style.salesContainer,
-          width: Dimensions.get('screen').width,
-          height: Dimensions.get('screen').height / 2 - 100,
+          width,
+          height: height / 2,
         }}>
         <View style={{margin: 15}}>
           <Text>Hello</Text>

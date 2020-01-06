@@ -3,9 +3,9 @@ import {View, Text} from 'native-base';
 import {Image, Dimensions, TouchableHighlight} from 'react-native';
 import Button from 'components/custom/Button';
 import StarRating from '@lib/react-native-star-rating';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {app} from '@src/helpers/constants';
 import style from './style';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 interface Props {
   id: number;
   image: string;

@@ -25,7 +25,7 @@ const index = values =>
       BookWasher: {
         screen: props => <BookWasher {...props} {...values} />,
         navigationOptions: ({navigation}) => ({
-          headerShown: true,
+          headerShown: false,
         }),
       },
     },

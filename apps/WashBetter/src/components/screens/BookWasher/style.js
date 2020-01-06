@@ -10,6 +10,13 @@ const style = {
   headerTitle: {
     flex: 0.12,
   },
+  imageOverlay: {
+    position: 'absolute',
+    backgroundColor: '#000',
+    top: 0,
+    zIndex: 1,
+    opacity: 0.4,
+  },
   imageContainer: {
     flex: 1,
   },
