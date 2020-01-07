@@ -18,7 +18,7 @@ const style = {
     opacity: 0.4,
   },
   imageContainer: {
-    flex: 1,
+    flex: 0.9,
   },
   image: {
     flex: 0.6,
@@ -29,8 +29,7 @@ const style = {
     bottom: 0,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    backgroundColor: '#fff',
-    elevation: 9,
+    elevation: 5,
   },
 };
 

@@ -1,6 +1,6 @@
 const AppContants = {
-  primaryColor: '#181DB8',
   primaryColorDark: '#03099E',
+  primaryColor: '#181DB8',
   primaryColorLight: '#353BC9',
   findWashHeight: 150,
 };

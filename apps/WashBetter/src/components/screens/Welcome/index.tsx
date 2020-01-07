@@ -14,6 +14,9 @@ export default props => {
       <View style={style.logoContainer}>
         <Animatable.View
           useNativeDriver
+          removeClippedSubviews
+          renderToHardwareTextureAndroid
+          shouldRasterizeIOS
           animation="slideInUp"
           delay={0}
           duration={900}
